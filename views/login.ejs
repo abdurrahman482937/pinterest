@@ -15,7 +15,9 @@
           class="img1"
         />
         <p class="header">Login</p>
-
+        <% if(error.length > 0){ %>
+        <p style="color: red; margin: 7px 0px"><%= error %></p>
+        <% } %>
         <form action="/login" method="post">
           <input
             type="text"
