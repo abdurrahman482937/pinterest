@@ -6,9 +6,9 @@ const postSchema = new Schema({
         type: String,
         required: true,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
+    image: {
+        type: String,
+        required: true,
     },
     likes: [
         {
@@ -16,14 +16,13 @@ const postSchema = new Schema({
             ref: 'User',
         },
     ],
-    image: {
-        type: String,
-        required: true,
-    },
-    owner: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
     },
 }, { timestamps: true });
 
