@@ -1,0 +1,28 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Responsiva</title>
+    <link rel="stylesheet" href="/stylesheets/nav.css" />
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="logo">
+        <a href="/" style="text-decoration: none; color: white">Logo</a>
+      </div>
+      <div class="menu" id="menu">
+        <a href="/register">register</a>
+        <a href="/feed">feed</a>
+        <a href="/profile">profile</a>
+        <a href="/logout">logout</a>
+      </div>
+      <div class="toggle" id="toggle">☰</div>
+    </nav>
+    <script>
+      document.getElementById("toggle").addEventListener("click", function () {
+        document.getElementById("menu").classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

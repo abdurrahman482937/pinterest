@@ -7,6 +7,7 @@
     <title>pinterest | register</title>
   </head>
   <body>
+    <% include ./nav.ejs %>=
     <div class="container">
       <div class="content">
         <img
@@ -17,7 +18,12 @@
         <p class="header">Register</p>
 
         <form action="/register" method="post">
-          <input type="text" name="fullname" placeholder="Full Name" class="detail" />
+          <input
+            type="text"
+            name="fullname"
+            placeholder="Full Name"
+            class="detail"
+          />
           <input
             type="text"
             name="username"
