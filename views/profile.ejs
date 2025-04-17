@@ -19,27 +19,29 @@
         <h3 class="username">@<%= user.username %></h3>
         <p class="description">Masih belajar CSS dan HTML.</p>
         <a href="/logout" class="button">Log out</a>
-        <form accept="/upload" method="post" enctype="multipart/form-data">
+        <form action="/upload" method="post" enctype="multipart/form-data">
           <input type="file" name="file" />
+          <input type="text" name="imageText" placeholder="image text" />
           <input type="submit" value="submit" />
         </form>
       </div>
-      <div
-        class="card"
-        style="width: 18rem; background-color: #ddd; padding: 15px"
-      >
-        <img
-          src="https://www.w3schools.com/w3images/underwater.jpg"
-          style="object-fit: cover; width: 100%; height: 200px"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap">
+        <% user.posts.forEach(function(post) { %>
+        <div
+          class="card"
+          style="width: 18rem; background-color: #ddd; padding: 15px"
+        >
+          <img
+            src="/images/upload/<%= post.image %>"
+            style="object-fit: cover; width: 100%; height: 200px"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text"><%= post.imageText %></p>
+          </div>
         </div>
+        <% }) %>
       </div>
     </div>
   </body>
